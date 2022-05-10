@@ -1,0 +1,42 @@
+﻿<Window x:Class="Goods.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Goods"
+        mc:Ignorable="d"
+        Title="Стоки"
+        Icon="./Images/AppIcon.ico"
+        xmlns:views="clr-namespace:Goods.Views"
+        xmlns:viewmodels="clr-namespace:Goods.ViewModels"
+        Height="550"
+        Width="840">
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/BackgroundImg.jpg" Stretch="Fill"></ImageBrush>
+    </Window.Background>
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:FormHomeViewModel}">
+                <views:FormHomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:StockFormViewModel}">
+                <views:StockFormView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ProviderFormViewModel}">
+                <views:ProviderFormView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ReportHomeViewModel}">
+                <views:ReportHomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:DeliveryReportViewModel}">
+                <views:DeliveryReportView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:StockReportViewModel}">
+                <views:StockReportView/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+</Window>
